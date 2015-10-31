@@ -1,21 +1,20 @@
 #include <stdio.h>
-#define p printf //hago esto por flojo
+#define p printf //facil acceso a print
 
 typedef struct cads{
 char cadena_01[10];//cadena que recibe
 char estado;      //Estado   en el que se encuentra la cadena con que se trabajará (E=error ,0,1,2,3,4)
 }cadena;
-void zoo(void);
-void evalua (void);
-cadena c;
+void zoo(void); 
+void evalua (void); //Evalua la cadena 
+void menu(void);
+cadena c; //tipo cadena
 main(){
   int op;
    do{
-    p("\n1.- Introducir una cadena\n");
-    p("2.- Validar cadena\n");
-    p("4.- Salir");
-    p("\n%c",c.estado);
-   // p("\nOpcion: ");// pa cerciorarce en elestado en el que finaliza
+    menu(); //llamado a funcion menu
+    //p("\n%c",c.estado);// pa cerciorarse en elestado en el que finaliza
+    
     fflush( stdin );
       
     scanf("%d[1-4]", &op);
@@ -122,4 +121,11 @@ void evalua(void){
 	}
 	cont++;
 }
+}
+
+void menu(void){
+    p("\n1.- Introducir una cadena\n");
+    p("2.- Validar cadena\n");
+    p("4.- Salir");
+    p("\nOpcion: ");
 }
